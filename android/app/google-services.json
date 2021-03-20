@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "837264127494",
+    "project_id": "cureskin-6b397",
+    "storage_bucket": "cureskin-6b397.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837264127494:android:dcb74a3692e1e61b787587",
+        "android_client_info": {
+          "package_name": "com.Hariprasad.cureskin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837264127494-8ichnb9kt6puo7be8emok9p0af0ke45j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAwBWcSBiGouM3p0Qwginu8V3RzyQ7DcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837264127494-8ichnb9kt6puo7be8emok9p0af0ke45j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
