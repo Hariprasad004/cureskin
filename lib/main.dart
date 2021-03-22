@@ -3,6 +3,7 @@ import 'package:cureskin/Screens/Splash_Screen.dart';
 import 'package:cureskin/Screens/Login_Screen.dart';
 import 'package:cureskin/Screens/Signup_Screen.dart';
 import 'package:cureskin/Screens/Forgot_Password.dart';
+import 'Screens/Home.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         SignupScreen.id: (context) => SignupScreen(),
         ForgotPassword.id: (context) => ForgotPassword(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }

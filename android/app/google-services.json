@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:87531945420:android:d955bce4a9967eed65b169",
+        "mobilesdk_app_id": "1:87531945420:android:ca94e66c546802ba65b169",
         "android_client_info": {
-          "package_name": "com.hariprasad.cureskin"
+          "package_name": "com.hari.cureskin"
         }
       },
       "oauth_client": [
