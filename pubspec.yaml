@@ -20,6 +20,10 @@ dependencies:
   firebase_core: ^1.0.1
   firebase_auth: ^1.0.1
   cloud_firestore: ^1.0.1
+  #fluttertoast: ^8.0.3
+  # add this line to your dependencies
+  toast: ^0.1.5
+
 
 dev_dependencies:
   flutter_test:

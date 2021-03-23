@@ -3,6 +3,7 @@ import 'Home.dart';
 import 'Forgot_Password.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:toast/toast.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'Login Screen';
@@ -30,17 +31,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   child: Stack(
                     children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                        child: Text('Hello',
-                            style: TextStyle(
-                                fontSize: 80.0, fontWeight: FontWeight.bold)),
+                      Center(
+                        child: Container(
+                          // padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
+                          padding: EdgeInsets.only(top:80.0, bottom:0.0),
+                          child: Text('Hello',
+                              style: TextStyle(
+                                  fontSize: 80.0, fontWeight: FontWeight.bold)),
+                        ),
                       ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(16.0, 175.0, 0.0, 0.0),
-                        child: Text('There',
-                            style: TextStyle(
-                                fontSize: 80.0, fontWeight: FontWeight.bold)),
+                      Center(
+                        child: Container(
+                          // padding: EdgeInsets.fromLTRB(16.0, 175.0, 0.0, 0.0),
+                          padding: EdgeInsets.only(top:155.0, bottom:0.0),
+                          child: Text('There',
+                              style: TextStyle(
+                                  fontSize: 80.0, fontWeight: FontWeight.bold)),
+                        ),
                       ),
                     ],
                   ),
@@ -99,23 +106,23 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text(
                               'Forgot Password',
                               style: TextStyle(
-                                  color: Colors.green,
+                                  color: Colors.indigo,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat',
                                   decoration: TextDecoration.underline),
                             ),
                             onTap: (){
-                              Navigator.popAndPushNamed(context, ForgotPassword.id);
+                              Navigator.pushNamed(context, ForgotPassword.id);
                             },
                           ),
                         ),
                         SizedBox(height: 40.0),
                         Container(
-                          height: 40.0,
+                          height: 50.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.greenAccent,
-                            color: Colors.green,
+                            shadowColor: Colors.lightBlue,
+                            color: Colors.blueAccent,
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () async {
@@ -127,16 +134,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                       //Success
                                       final user = await _auth.signInWithEmailAndPassword(email: _email, password: _password);
                                       if(user!=null){
+                                        setState(() {
+                                          showSpinner = false;
+                                        });
+                                        Toast.show('Login successful', context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.greenAccent);
                                         Navigator.popAndPushNamed(context, HomeScreen.id);
                                       }
                                   }
                                   catch(e){
                                     //Failed
-                                    print(e);
+                                    setState(() {
+                                      showSpinner = false;
+                                    });
+                                    print(e.message);
+                                    Toast.show(e.message, context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.red);
                                   }
-                                  setState(() {
-                                    showSpinner = false;
-                                  });
                                 }
                                 else{
                                   print("Unsuccessful");
