@@ -69,6 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             if(value.isEmpty){
                               return "Enter Email Address";
                             }
+                            else if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                              return "Enter a valid email";
+                            }
                             else
                               return null;
                           },
@@ -104,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: EdgeInsets.only(top: 15.0, left: 20.0),
                           child: InkWell(
                             child: Text(
-                              'Forgot Password',
+                              'Forgot Password?',
                               style: TextStyle(
                                   color: Colors.indigo,
                                   fontWeight: FontWeight.bold,
@@ -137,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         setState(() {
                                           showSpinner = false;
                                         });
-                                        Toast.show('Login successful', context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.greenAccent);
+                                        Toast.show('Login successful', context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.green);
                                         Navigator.popAndPushNamed(context, HomeScreen.id);
                                       }
                                   }

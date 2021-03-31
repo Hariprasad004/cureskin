@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cureskin/Screens/Login_Screen.dart';
 import 'package:cureskin/Screens/Signup_Screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'Home.dart';
 
 class SplashScreen extends StatefulWidget {
   static String id = 'Splash Screen';

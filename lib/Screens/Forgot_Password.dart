@@ -67,7 +67,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             validator: (String value) {
                               if (value.isEmpty) {
                                 return "Enter Email Address";
-                              } else
+                              }
+                              else if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                                return "Enter a valid email";
+                              }
+                              else
                                 return null;
                             },
                             onChanged: (value) {
@@ -93,7 +97,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                         setState(() {
                                           showSpinner = false;
                                         });
-                                        Toast.show('Verification email has been sent', context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.greenAccent);
+                                        Toast.show('Verification email has been sent', context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.green);
                                         Navigator.pop(context);
                                       } catch (e) {
                                         //Failed

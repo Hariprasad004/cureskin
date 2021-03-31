@@ -66,6 +66,9 @@ class _SignupScreenState extends State<SignupScreen> {
                               if(value.isEmpty){
                                 return "Enter Email Address";
                               }
+                              else if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                                return "Enter a valid email";
+                              }
                               else
                                 return null;
                             },
@@ -140,7 +143,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           setState(() {
                                             showSpinner = false;
                                           });
-                                          Toast.show("Signup successful. Please login.", context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.greenAccent);
+                                          Toast.show("Signup successful. Please login.", context, duration: Toast.LENGTH_LONG, gravity:  Toast.BOTTOM, backgroundColor: Colors.green);
                                           Navigator.popAndPushNamed(context, LoginScreen.id);
                                         }
                                       }
