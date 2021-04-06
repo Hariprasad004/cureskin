@@ -5,6 +5,7 @@ import 'package:cureskin/Screens/Login_Screen.dart';
 import 'package:cureskin/Screens/Signup_Screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'Home.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   static String id = 'Splash Screen';
@@ -26,13 +27,22 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Center(
-        child: Image(
-          image: AssetImage('images/splash.png'),height: 100, width: 100,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body:
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+        Container(
+          child: Center(
+            child: Image(
+              image: AssetImage('images/splash.png'),height: 120, width: 120,
+            ),
+          ),
         ),
-      ),
+          SizedBox(height: 60.0,),
+          SpinKitRipple(color:Colors.red,),
+      ]),
     );
   }
 }
