@@ -1,0 +1,8 @@
+Acne
+Actinic
+Eczema
+Psoriasis
+Seborrheic
+Tinea Ringworm
+Normal Skin
+Not a Skin

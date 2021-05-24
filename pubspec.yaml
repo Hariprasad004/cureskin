@@ -21,10 +21,10 @@ dependencies:
   firebase_auth: ^1.0.1
   cloud_firestore: ^1.0.1
   toast: ^0.1.5
-  image_picker:
+  image_picker: ^0.7.5
   getwidget: ^1.1.0
   flutter_spinkit: "^4.1.2"
-  #animated_splash_screen: ^1.1.0
+  tflite: ^1.1.2
 
 
 dev_dependencies:
@@ -39,6 +39,8 @@ flutter:
   assets:
     - images/splash.png
     - images/placeholder.jpg
+    - asset/labels.txt
+    - asset/model_unquant.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

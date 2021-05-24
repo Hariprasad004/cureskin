@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
           SizedBox(height: 60.0,),
-          SpinKitRipple(color:Colors.red,),
+          SpinKitDoubleBounce(color:Colors.red,),
       ]),
     );
   }
